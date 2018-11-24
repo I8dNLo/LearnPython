@@ -1,11 +1,10 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
-import bot.settings
-
+import settings
 
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s',
                     level=logging.INFO,
-                    filename='bot.log'
+                    filename='bot/bot.log'
                     )
 
 
@@ -23,7 +22,7 @@ def talk_to_me(bot, update):
 
 
 def main():
-    mybot = Updater(bot.settings.API_KEY)
+    mybot = Updater(settings.API_KEY)
     logging.info('Бот запускается')
     dp = mybot.dispatcher
     dp.add_handler(CommandHandler('start', greet_user))
