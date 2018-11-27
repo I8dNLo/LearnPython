@@ -7,6 +7,8 @@ def string_comparison(s1, s2):
         return 2
     elif s2 == 'learn':
         return 3
+    else:
+        return 'Что-то пошло не так'
 
 
 print(string_comparison(3, 'string'))
